@@ -1,4 +1,8 @@
 sceneSetups:
-- path: Assets/Scenes/SampleScene.unity
+<<<<<<< HEAD
+- path: Assets/Scenes/ConductorTest.unity
+=======
+- path: Assets/Scenes/Game.unity
+>>>>>>> 527b14223a78a7ba5b57191b6326997419424ca3
   isLoaded: 1
   isActive: 1
