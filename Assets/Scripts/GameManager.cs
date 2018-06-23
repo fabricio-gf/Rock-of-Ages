@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
-    public static GameManager instance = null;
+    public static GameManager instance;
     public ControllerLayout cl;
     public GameObject[] notes;
+    public float score;
+    public float mult;
 
     private void Awake()
     {
@@ -30,7 +32,7 @@ public class GameManager : MonoBehaviour {
                 switch (instruments[i])
                 {
                     case 0:
-                        //disable
+                        Destroy(notes[i].gameObject);
                         break;
                     case 1:
                         notes[i].GetComponent<InputBehaviour>().buttonCode = KeyCode.Q;
@@ -78,13 +80,9 @@ public class GameManager : MonoBehaviour {
         Destroy(cl.gameObject);
     }
 
-    public void NextBeat()
-    {
-        //chama os eventos relativos a cada batida;
-    }
     public void EndGame()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("EndGame");
     }
     // Update is called once per frame
     void Update () {

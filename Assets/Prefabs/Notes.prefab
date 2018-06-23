@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonCode: 0
+  pressRegion: {fileID: 0}
 --- !u!212 &212175466500698264
 SpriteRenderer:
   m_ObjectHideFlags: 1

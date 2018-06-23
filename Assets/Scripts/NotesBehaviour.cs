@@ -13,9 +13,16 @@ public class NotesBehaviour : MonoBehaviour {
     public SpriteRenderer[] Sprite;
     public  float notecount;
     public float maxnote;
+    InputBehaviour ib;
 	// Use this for initialization
+
+    void Awake(){
+        conductor.maxbeats = maxnote+1;
+    }
+
 	void Start () {
 
+        ib = GetComponent<InputBehaviour>();
         conductor = ConductorManager.GetComponent<Conductor>();
         currnote = 0;
         Sprite[0] = references[0].GetComponent<SpriteRenderer>();
@@ -94,10 +101,12 @@ public class NotesBehaviour : MonoBehaviour {
             if (notesequence[currnote - 3] == 0)
             {
                 Sprite[3].sprite = redsprite;
+                ib.canPress = false;
             }
             else if (notesequence[currnote - 3] == 1)
             {
                 Sprite[3].sprite = greensprite;
+                ib.canPress = true;
             }
         }
         currnote++;

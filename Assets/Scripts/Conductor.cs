@@ -44,16 +44,16 @@ using UnityEngine;
                 barcount++;
 
             }
+            if(beatscount >= maxbeats){
+                GameManager.instance.EndGame();
+            }
 
-            Debug.Log("total time" + " " + songposition);
+            /*Debug.Log("total time" + " " + songposition);
             Debug.Log("beats count" + " " + beatscount);
             Debug.Log("sector count" + " " + sectorcount);
-            Debug.Log("bar" + " " + barcount);
+            Debug.Log("bar" + " " + barcount);*/
 
         }
-
-
-
         private void checkbar()
         {
             if (sectorcount < 4)
