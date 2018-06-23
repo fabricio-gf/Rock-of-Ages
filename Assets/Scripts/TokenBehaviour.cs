@@ -11,7 +11,6 @@ public class TokenBehaviour : MonoBehaviour{
 	public Vector2 initialPosition;
 	public SectorBehaviour selectedSector;
 	bool validSector = false;
-	bool insideCenter = true;
 
 	public int buttonLayout;
 	public Sprite keyboardLayout;
@@ -52,17 +51,8 @@ public class TokenBehaviour : MonoBehaviour{
 		if(other.tag == "Center"){
 			print("enter center");
 			validSector = false;
-			insideCenter = true;
 		}
 	}
-
-	public void OnTriggerExit2D(Collider2D other){
-		if(other.tag == "Center"){
-			print("exit center");
-			insideCenter = false;
-		}
-	}
-
 	public void ChangeSprite(){
 		Image image = GetComponent<Image>();
 		if(buttonLayout == 0)

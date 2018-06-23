@@ -23,9 +23,9 @@ public class ControllerLayout : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.Tab)){
+		/*if(Input.GetKeyDown(KeyCode.Tab)){
 			ChangeLayout();
-		}
+		}*/
 	}
 
 	void ChangeLayout(){
