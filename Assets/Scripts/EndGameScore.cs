@@ -12,10 +12,10 @@ public class EndGameScore : MonoBehaviour {
 	void Start () {
 		for(int i = 0; i < 4; i++){
 			if(GameManager.instance.score[i] == 0){
-				score[i].text = "PLAYER " + i + " SUCKS!!!";
+				score[i].text = "PLAYER " + (i+1) + " SUCKS!!!";
 				continue;
 			}
-			score[i].text = "Player " + i + ": " + GameManager.instance.score[i].ToString();
+			score[i].text = "Player " + (i+1) + ": " + GameManager.instance.score[i].ToString();
 		}
 	}
 	
