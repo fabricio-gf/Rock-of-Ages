@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ControllerLayout : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class ControllerLayout : MonoBehaviour {
 
 	//vetor onde a posição+1 indica o jogador e o numero de 0 a 4 indica o instrumento. ex: pos 0 e valor 1 -> jogador 1 com o alaúde
 	public int[] selectedInstruments;
+	public Button playButton;
 
 	void Awake(){
 		if (instance == null)
@@ -37,6 +39,7 @@ public class ControllerLayout : MonoBehaviour {
 	}
 
 	public void UpdateInstruments(){
+		int count = 0;
 		for(int i = 0; i < 4; i++){
 			print("entrou");
 			if(tokens[i].selectedSector != null){
@@ -45,6 +48,15 @@ public class ControllerLayout : MonoBehaviour {
 			else{
 				selectedInstruments[i] = 0;
 			}
+			if(selectedInstruments[i] == 0){
+				count++;
+			}
+		}
+		if(count == 4){
+			playButton.interactable = false;
+		}
+		else{
+			playButton.interactable = true;
 		}
 	}
 }

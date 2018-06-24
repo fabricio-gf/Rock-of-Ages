@@ -39,6 +39,7 @@ public class NotesBehaviour : MonoBehaviour {
 	void Update () {
         if (conductor.beatscount > notecount&&currnote<=maxnote)
         {
+            ib.CheckMiss();
             ChangeSpace();
             notecount++;
         }

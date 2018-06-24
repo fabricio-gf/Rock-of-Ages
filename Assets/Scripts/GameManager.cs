@@ -6,8 +6,8 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance;
     public ControllerLayout cl;
     public GameObject[] notes;
-    public float score;
-    public float mult;
+    public float[] score;
+    public float[] mult;
 
     private void Awake()
     {
@@ -25,10 +25,17 @@ public class GameManager : MonoBehaviour {
     }
 
     void Initialize(){
+        score = new float[4];
+        mult = new float [4];
+        for(int i = 0; i < 4; i ++){
+            score[i] = 0;
+            mult[i] = 1;
+        }
         cl = ControllerLayout.instance;
         int[] instruments = cl.selectedInstruments;
         if(cl.currentLayout == 0){
             for(int i = 0; i < 4; i++){
+
                 switch (instruments[i])
                 {
                     case 0:
